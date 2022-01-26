@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dongdongwu.studycomposeui.composeui.studyhello.StudyHelloWord
 import com.dongdongwu.studycomposeui.eluosi.ELuSiActivity
+import com.dongdongwu.studycomposeui.huarongdao.HuaRongDaoActivity
 import com.dongdongwu.studycomposeui.tianqi.TianQiIconActivity
 
 //compose ui学习
@@ -60,13 +61,24 @@ class MainActivity : ComponentActivity() {
             TextButton(
                 onClick = {
                     //跳转到俄罗斯方块界面
+                    startActivity(Intent(this@MainActivity, HuaRongDaoActivity::class.java))
+                }, Modifier
+                    .fillMaxWidth()
+                    .background(Color(0xee00ff00))
+            ) {
+                Text(text = "华容道")
+            }
+
+            /*TextButton(
+                onClick = {
+                    //跳转到俄罗斯方块界面
                     startActivity(Intent(this@MainActivity, ELuSiActivity::class.java))
                 }, Modifier
                     .fillMaxWidth()
                     .background(Color(0xee00ff00))
             ) {
                 Text(text = "俄罗斯方块")
-            }
+            }*/
         }
     }
 }
