@@ -1,6 +1,7 @@
 package com.dongdongwu.studycomposeui.huarongdao
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
@@ -15,7 +16,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.concurrent.thread
 
 /**
  * 类描述：华容道 <br/>
@@ -51,6 +58,19 @@ class HuaRongDaoActivity : AppCompatActivity() {
                             list = chessState
                         ) { currentName, x, y ->
                             //棋子移动逻辑
+                            chessState = chessState.map {
+                                if (it.name == currentName) {
+                                    if (x != 0) {
+                                        //水平移动
+                                        it.checkAndMoveX(x, chessState)
+                                    } else {
+                                        //垂直移动
+                                        it.checkAndMoveY(y, chessState)
+                                    }
+                                } else {
+                                    it
+                                }
+                            }
                         }
                     }
 
