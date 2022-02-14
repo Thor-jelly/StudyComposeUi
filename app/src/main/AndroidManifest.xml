@@ -16,7 +16,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.StudyComposeUi.NoActionBar">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,6 +32,7 @@
         <activity android:name=".huarongdao.HuaRongDaoActivity" />
         <!--        模仿俄罗斯游戏Activity-->
         <activity android:name=".eluosi.ELuSiActivity" />
+        <!--        wanAndroid-->
+        <activity android:name=".wanandroid.WanAndroidActivity" />
     </application>
-
 </manifest>

@@ -10,15 +10,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dongdongwu.studycomposeui.composeui.studyhello.StudyHelloWord
-import com.dongdongwu.studycomposeui.eluosi.ELuSiActivity
 import com.dongdongwu.studycomposeui.huarongdao.HuaRongDaoActivity
 import com.dongdongwu.studycomposeui.tianqi.TianQiIconActivity
+import com.dongdongwu.studycomposeui.wanandroid.WanAndroidActivity
 
 //compose ui学习
 //https://github.com/google/accompanist
@@ -67,6 +67,18 @@ class MainActivity : ComponentActivity() {
                     .background(Color(0xee00ff00))
             ) {
                 Text(text = "华容道")
+            }
+
+
+            TextButton(
+                onClick = {
+                    //跳转到俄罗斯方块界面
+                    startActivity(Intent(this@MainActivity, WanAndroidActivity::class.java))
+                }, Modifier
+                    .fillMaxWidth()
+                    .background(Color(0xe900ff00))
+            ) {
+                Text(text = "玩Android")
             }
 
             /*TextButton(
